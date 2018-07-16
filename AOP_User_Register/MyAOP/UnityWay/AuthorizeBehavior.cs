@@ -8,20 +8,30 @@ using Unity.Interception.PolicyInjection.Pipeline;
 
 namespace MyAOP.UnityWay
 {
-    public class AuthorizeBehavior//: IInterceptionBehavior
+    public class AuthorizeBehavior : IInterceptionBehavior
     {
-        public bool WillExecute => throw new NotImplementedException();
+        public bool WillExecute { get { return true; } }
 
         public IEnumerable<Type> GetRequiredInterfaces()
         {
             return Type.EmptyTypes;
         }
 
-        //public IMethodReturn Invoke(IMethodInvocation input, GetNextInterceptionBehaviorDelegate getNext)
-        //{
-        //    //throw new NotImplementedException();
-        //    User user = input.Inputs[0] as User;
+        public IMethodReturn Invoke(IMethodInvocation input, GetNextInterceptionBehaviorDelegate getNext)
+        {
+            //throw new NotImplementedException();
+            User user = input.Inputs[0] as User;
+            if (user == null || user.Name.Equals("Anonymous"))
+            {
+                return input.CreateExceptionMethodReturn(new Exception("Invalid user"));
+            }
+            else
+            {
+                return getNext().Invoke(input, getNext);
+                //return getNext()(input, getNext);
+            }
 
-        //}
+
+        }
     }
 }

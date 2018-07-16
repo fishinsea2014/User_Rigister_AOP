@@ -19,7 +19,7 @@ namespace MyAOP.UnityWay
         {
             User user = new User()
             {
-                Name = "Eleven",
+                Name = "Anonymous1",
                 Password = "123456789012"
             };
 
