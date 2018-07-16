@@ -90,6 +90,7 @@
     <Compile Include="UnityWay\LogAfterBehavior.cs" />
     <Compile Include="UnityWay\LogBeforeBehavior.cs" />
     <Compile Include="UnityWay\ParameterCheckBehavior.cs" />
+    <Compile Include="UnityWay\SMSNotify.cs" />
     <Compile Include="UnityWay\UnityConfigAOP.cs" />
     <Compile Include="UnityWay\UserProcessor.cs" />
   </ItemGroup>
