@@ -21,10 +21,21 @@ namespace MyAOP.UnityWay
         {
             //throw new NotImplementedException();
             User user = input.Inputs[0] as User;
-            if (user == null || user.Name.Equals("Anonymous"))
-            {
-                return input.CreateExceptionMethodReturn(new Exception("Invalid user"));
+            var method = input.MethodBase;
+            if (method.IsDefined(typeof(AuthoriseAttribute), true)){
+                if (user == null || user.Name.Equals("Anonymous"))
+                {
+                    return input.CreateExceptionMethodReturn(new Exception("Invalid user"));
+                }
+                else
+                {
+                    return getNext()(input, getNext);
+                }
             }
+            else if (method.IsDefined(typeof(AllowAnonymousAttribute), true))
+            {
+                return getNext()(input, getNext);
+            }            
             else
             {
                 return getNext().Invoke(input, getNext);
