@@ -84,6 +84,7 @@
     <Compile Include="UnityAOP.cs" />
     <Compile Include="UnityWay\AuthoriseAttribute.cs" />
     <Compile Include="UnityWay\AuthorizeBehavior.cs" />
+    <Compile Include="UnityWay\CachingBehavior.cs" />
     <Compile Include="UnityWay\ExceptionLoggingBehavior.cs" />
     <Compile Include="UnityWay\IUserProcessor.cs" />
     <Compile Include="UnityWay\LogAfterBehavior.cs" />

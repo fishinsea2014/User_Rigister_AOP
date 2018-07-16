@@ -20,7 +20,7 @@ namespace MyAOP.UnityWay
             User user = new User()
             {
                 Name = "Eleven",
-                Password = "123456789"
+                Password = "123456789012"
             };
 
             {
@@ -45,10 +45,17 @@ namespace MyAOP.UnityWay
                 processor.RegUser(user);
                 //processor.GetUser(user);
                 Console.WriteLine("==============");
-                //User userNew1 = processor.GetUser(user);
-                //Console.WriteLine("==============");
-                //User userNew2 = processor.GetUser(user);
-                //Console.WriteLine("==============");
+
+                {
+                    // Test for caching behaviors
+                    User userNew1 = processor.GetUser(user);
+                    Console.WriteLine("==============");
+
+                    //This time will directly come to exception loggin, for relevant object has been chached.
+                    User userNew2 = processor.GetUser(user);
+                    Console.WriteLine("==============");
+                }
+                
 
             }
         }
