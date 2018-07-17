@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyAOP.MVCFilter
 {
-    public interface IOrderService
+    /// <summary>
+    /// An empty interfade
+    /// </summary>
+    public interface BaseController
     {
-        void Index(int id, string name);
     }
 }

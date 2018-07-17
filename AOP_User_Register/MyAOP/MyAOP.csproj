@@ -77,6 +77,12 @@
     <Compile Include="CastleProxyAOP.cs" />
     <Compile Include="DecoratorAOP.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="MVCFilter\AOPManager.cs" />
+    <Compile Include="MVCFilter\BaseController.cs" />
+    <Compile Include="MVCFilter\IOrderService.cs" />
+    <Compile Include="MVCFilter\LogFilterAttribute.cs" />
+    <Compile Include="MVCFilter\MVCFilterShow.cs" />
+    <Compile Include="MVCFilter\OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxyAOP.cs" />
@@ -101,8 +107,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVCFilter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

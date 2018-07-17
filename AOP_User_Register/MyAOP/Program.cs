@@ -1,4 +1,5 @@
-﻿using MyAOP.UnityWay;
+﻿using MyAOP.MVCFilter;
+using MyAOP.UnityWay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,10 @@ namespace MyAOP
             //CastleProxyAOP.Show();
 
             //AOP by Unity
-            UnityConfigAOP.Show();
+            //UnityConfigAOP.Show();
+
+            //MVC filter
+            MVCFilterShow.Show();
 
             Console.Read();
         }
